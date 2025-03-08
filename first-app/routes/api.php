@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post('register', 'UserController@store')->name('user.store');
+// Route::get('register', 'UserController@store')->name('user.store');
+Route::get('register', 'UserController@store');
