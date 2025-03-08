@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\FullController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -82,3 +83,6 @@ Route::get('/', function () {
         Route::get('/core', [EmpresaController::class, 'index'])->name('core.idx');
         Route::get('/time/{time?}', [EmpresaController::class, 'time'])->name('core.time');
     });
+
+// resource call controller
+    Route::resource('full', FullController::class);
