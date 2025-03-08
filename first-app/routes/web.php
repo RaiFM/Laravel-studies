@@ -1,13 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmpresaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 // call view directly
-    Route::view('/core', 'empresa');
+    Route::view('/emp', 'empresa');
 
 // Route naming and redirecting 
     Route::get('/teste', function(){
@@ -53,7 +54,7 @@ Route::get('/', function () {
                 return "prefixed routes group: core";
             })->name('core');
         });
-        
+
     // prefix
         Route::prefix('adm')->group(function(){
             Route::get('/teste', function(){
@@ -75,3 +76,9 @@ Route::get('/', function () {
                 return "named routes group: core";
             })->name('core');
         });
+
+// Call controller
+    Route::name('core.')->group(function(){
+        Route::get('/core', [EmpresaController::class, 'index'])->name('core.idx');
+        Route::get('/time/{time?}', [EmpresaController::class, 'time'])->name('core.time');
+    });
