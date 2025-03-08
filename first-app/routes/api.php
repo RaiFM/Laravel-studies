@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Route::get('register', 'UserController@store')->name('user.store');
-Route::get('register', 'UserController@store');
+// Route::get('register', 'UserController@store');
