@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\product;
 
 class FullController extends Controller
 {
@@ -13,7 +14,11 @@ class FullController extends Controller
      */
     public function index()
     {
-        return 'empresa';
+        // return 'empresa';
+
+        $produtos = product::all();
+
+        return dd($produtos);
     }
 
     /**
