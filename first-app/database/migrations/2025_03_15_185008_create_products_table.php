@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->double('price', 10, 2);
             $table->string('slug');
-            $table->string('image');
+            $table->string('image')->nullable();
 
             // foreign key
             $table->unsignedBigInteger('id_user');
